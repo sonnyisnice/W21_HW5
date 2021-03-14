@@ -42,7 +42,7 @@ class TestCard(unittest.TestCase):
         '''
         c3 = hw5_cards.Card(rank=12)
         test1Result = self.assertEqual(c3.rank_name, "Queen")
-        return test1Result
+        return (c3.rank_name, "Queen")
     
     def test_q2(self):
         '''
@@ -58,7 +58,7 @@ class TestCard(unittest.TestCase):
         '''
         c4 = hw5_cards.Card(suit=1)
         test2Result = self.assertEqual(c4.suit_name, "Clubs")
-        return test2Result
+        return (c4.suit_name, "Clubs")
 
     def test_q3(self):
         '''
@@ -75,7 +75,7 @@ class TestCard(unittest.TestCase):
         '''
         c5 = hw5_cards.Card(3,13)
         test3Result = self.assertEqual(str(c5), "King of Spades")
-        return test3Result
+        return (str(c5), "King of Spades")
     
     def test_q4(self):
         '''
@@ -91,7 +91,7 @@ class TestCard(unittest.TestCase):
         '''
         d1 = hw5_cards.Deck()
         test4Result = self.assertEqual(52, len(d1.cards))
-        return test4Result
+        return (52, len(d1.cards))
 
     def test_q5(self):
         '''
@@ -108,7 +108,7 @@ class TestCard(unittest.TestCase):
         d2 = hw5_cards.Deck()
         c6 = d2.deal_card()
         test5Result = self.assertIsInstance(c6, hw5_cards.Card)
-        return test5Result
+        return (c6, hw5_cards.Card)
     
     def test_q6(self):
         '''
@@ -126,7 +126,7 @@ class TestCard(unittest.TestCase):
         d3 = hw5_cards.Deck()
         d3.deal_card()
         test6Result = self.assertEqual(len(d3.cards), 51)
-        return test6Result
+        return (len(d3.cards), 51)
 
     def test_q7(self):
         '''
@@ -146,7 +146,7 @@ class TestCard(unittest.TestCase):
         c7 = d4.deal_card()
         d4.replace_card(c7)
         test7Result = self.assertEqual(len(d4.cards), 52)
-        return test7Result
+        return (len(d4.cards), 52)
     
     def test_q8(self):
         '''
@@ -164,7 +164,7 @@ class TestCard(unittest.TestCase):
         d5 = hw5_cards.Deck()
         d5.replace_card(hw5_cards.Card(1,1))
         test8Result = self.assertEqual(len(d5.cards), 52)
-        return test8Result  
+        return (len(d5.cards), 52) 
 
 
 
